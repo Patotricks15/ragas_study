@@ -34,7 +34,7 @@ Metrics should be designed to be easy to understand and interpret
 When developing metrics using large language models (LLMs), use intelligent prompt flows that align closely with human evaluation
 
 ### Explain Robustness principle
-When developing metrics using large language models (LLMs), use intelligent prompt flows that align closely with human evaluation
+Ensure that LLM-based metrics include sufficient few-shot examples that reflect the desired outcomes.
 
 ### Explain Consistent Scoring Ranges principle
-When developing metrics using large language models (LLMs), use intelligent prompt flows that align closely with human evaluation
+It is crucial to normalize metric score values or ensure they fall within a specific range, such as 0 to 1.
