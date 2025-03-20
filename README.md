@@ -38,3 +38,29 @@ Ensure that LLM-based metrics include sufficient few-shot examples that reflect 
 
 ### Explain Consistent Scoring Ranges principle
 It is crucial to normalize metric score values or ensure they fall within a specific range, such as 0 to 1.
+
+## RAG Metrics
+
+### Explain context precision
+- Context Precision is a metric that measures the proportion of relevant chunks in the retrieved_contexts.
+
+- It is calculated as the mean of the precision@k for each chunk in the context.
+
+- Precision@k is the ratio of the number of relevant chunks at rank k to the total number of chunks at rank k.
+
+Where K is the total number of chunks in retrieved_contexts and vk∈{0,1} is the relevance indicator at rank k.
+
+### Explain context recall
+- Context Recall measures how many of the relevant documents (or pieces of information) were successfully retrieved. It focuses on not missing important results.
+
+### What's the difference betwen LLM recall and nonLLM recall?
+- LLM Context Recall: Uses a Large Language Model (LLM) to analyze the retrieved context and compare it to the reference context. It breaks down the reference into claims and determines if each claim can be attributed to the retrieved context.
+
+- Non LLM Context Recall: Uses non-LLM based metrics, such as string comparison, to determine if a retrieved context is relevant or not.
+
+
+
+
+
+
+
