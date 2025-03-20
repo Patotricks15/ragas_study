@@ -59,8 +59,16 @@ Where K is the total number of chunks in retrieved_contexts and vk∈{0,1} is th
 - Non LLM Context Recall: Uses non-LLM based metrics, such as string comparison, to determine if a retrieved context is relevant or not.
 
 
+### Explain context entities recall
+- ContextEntityRecall metric gives the measure of recall of the retrieved context, based on the number of entities present in both reference and retrieved_contexts relative to the number of entities present in the reference alone. 
 
+### Explain Noise Sensitivity
+- NoiseSensitivity measures how often a system makes errors by providing incorrect responses when utilizing either relevant or irrelevant retrieved documents. The score ranges from 0 to 1, with lower values indicating better performance.
 
+### Explain Response Relevancy
+- The ResponseRelevancy metric measures how relevant a response is to the user input. Higher scores indicate better alignment with the user input, while lower scores are given if the response is incomplete or includes redundant information.
 
+### Explain Faithfulness
+- The Faithfulness metric measures how factually consistent a response is with the retrieved context. It ranges from 0 to 1, with higher scores indicating better consistency.
 
-
+- A response is considered faithful if all its claims can be supported by the retrieved context.
