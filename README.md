@@ -38,3 +38,37 @@ Ensure that LLM-based metrics include sufficient few-shot examples that reflect 
 
 ### Explain Consistent Scoring Ranges principle
 It is crucial to normalize metric score values or ensure they fall within a specific range, such as 0 to 1.
+
+## RAG Metrics
+
+### Explain context precision
+- Context Precision is a metric that measures the proportion of relevant chunks in the retrieved_contexts.
+
+- It is calculated as the mean of the precision@k for each chunk in the context.
+
+- Precision@k is the ratio of the number of relevant chunks at rank k to the total number of chunks at rank k.
+
+Where K is the total number of chunks in retrieved_contexts and vk∈{0,1} is the relevance indicator at rank k.
+
+### Explain context recall
+- Context Recall measures how many of the relevant documents (or pieces of information) were successfully retrieved. It focuses on not missing important results.
+
+### What's the difference betwen LLM recall and nonLLM recall?
+- LLM Context Recall: Uses a Large Language Model (LLM) to analyze the retrieved context and compare it to the reference context. It breaks down the reference into claims and determines if each claim can be attributed to the retrieved context.
+
+- Non LLM Context Recall: Uses non-LLM based metrics, such as string comparison, to determine if a retrieved context is relevant or not.
+
+
+### Explain context entities recall
+- ContextEntityRecall metric gives the measure of recall of the retrieved context, based on the number of entities present in both reference and retrieved_contexts relative to the number of entities present in the reference alone. 
+
+### Explain Noise Sensitivity
+- NoiseSensitivity measures how often a system makes errors by providing incorrect responses when utilizing either relevant or irrelevant retrieved documents. The score ranges from 0 to 1, with lower values indicating better performance.
+
+### Explain Response Relevancy
+- The ResponseRelevancy metric measures how relevant a response is to the user input. Higher scores indicate better alignment with the user input, while lower scores are given if the response is incomplete or includes redundant information.
+
+### Explain Faithfulness
+- The Faithfulness metric measures how factually consistent a response is with the retrieved context. It ranges from 0 to 1, with higher scores indicating better consistency.
+
+- A response is considered faithful if all its claims can be supported by the retrieved context.
